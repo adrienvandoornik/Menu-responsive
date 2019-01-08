@@ -59,7 +59,7 @@ nav > ul > li > a {
 
 nav li:hover .submenu{
     display: inline-block;
-    position: absolue;
+    position: absolute;
     top: 100%;
     left: 0px;
     padding: 0px;
@@ -128,6 +128,15 @@ nav > ul > li:hover a{
 
 .menu-js .submenu li:hover{
     background-color: RGB(200, 165, 75);
+}
+
+.menu-mobile{
+    display:none;
+}
+
+/* On rend notre case à cocher invisible */
+nav input[type=checkbox]{
+    display:none;
 }
 
 /* Lorsque la case est cochée (dès qu'un utilisateur appuie sur notre bouton), le menu entier s'affiche */
