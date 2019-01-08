@@ -1,0 +1,161 @@
+body{
+    font-family: Verdana,Calibri, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* On utilise ">" pour ne cibler que la liste ul qui est un enfant direct de nav */
+nav > ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* On enlève les puces devant tous les éléments li appartenant à notre élément nav */
+nav li{
+    list-style-type: none;
+}
+
+/*On affiche seulement les éléments li correspondant à nos onglets de menu en ligne (côte à côte) */
+nav > ul > li {
+    float: left;
+    position: relative;
+}
+
+.submenu{
+    display: none;
+}
+
+/*On rend notre case à cocher invisible */
+nav input[type=checkbox]{
+    display: none;
+}
+
+/* On cache le bouton affichant le menu mobile */
+.menu-mobile{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    background-color: #424558;
+}
+
+/* Un "hack" CSS (clearfix) très connu */
+nav > ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav > ul > li > a {
+    padding: 20px 30px;
+    color: #FFF;
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolue;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}
+
+.submenu li {
+    border-bottom: 1px solid #CCC;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+}
+
+.menu-html:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.15);
+}
+
+.menu-css:hover{
+    border-top: 5px solid #0070bb;
+    background-color: rgba(000, 112, 192, 0.15);
+}
+
+.menu-js:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: rgba(241, 211, 79, 0.15);
+}
+
+.menu-contact:hover{
+    border-top: 5px solid #BBB;
+    background-color: rgba(220, 220, 220, 0.15);
+}
+
+nav > ul > li:hover a{
+    padding: 15px 30px 20px 30px;
+}
+
+.menu-html .submenu{
+    background-color: RGB(230,100,40);
+}
+
+.menu-css .submenu{
+    background-color: RGB(000,160,240);
+}
+
+.menu-js .submenu{
+    background-color: RGB(251, 216, 99);
+}
+
+.submenu li:hover a{
+    color: #EEE;
+    font-weight: bold;
+}
+
+.menu-html .submenu li:hover{
+    background-color: RGB(210,77,60);
+}
+
+.menu-css .submenu li:hover{
+    background-color: RGB(000,115,200);
+}
+
+.menu-js .submenu li:hover{
+    background-color: RGB(200, 165, 75);
+}
+
+/* Lorsque la case est cochée (dès qu'un utilisateur appuie sur notre bouton), le menu entier s'affiche */
+nav input[type=checkbox]:checked ~ ul {
+    display: block;
+}
+
+/* On modifie le style de notre menu pour son affichage responsive */
+@media screen and (max-width: 680px){
+    .menu-mobile {
+        display:block;
+        color: #fff;
+        background-color: rgba(29, 197, 151, 0.97);
+        text-align: center;
+        padding: 12px 0;
+    }
+    nav ul{
+        display: none;
+    }
+}
+    nav ul li, nav ul li a{
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0px 10px 0px;
+    }
+    nav li:hover .submenu{
+        display: block;
+        position:static;
+    }
